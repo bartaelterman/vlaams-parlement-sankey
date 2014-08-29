@@ -7,9 +7,7 @@ function drawRibbon(data, canvasHeight, pointLength) {
     // Define top line: goes from left to right
     var topSubLines = [];
     var leftx = data[0].x - (pointLength / 2);
-    var lefty = canvasHeight - data[0].y);
-    topSubLines.push("" + leftx + "," + lefty);
-    var lefty = canvasHeight - data[0].y - data[0].h;
+    var lefty = canvasHeight - data[0].y;
     topSubLines.push("" + leftx + "," + lefty);
     for (var i=0;i<(data.length-1);i++) {
         var leftx = data[i].x + (pointLength / 2);
@@ -19,15 +17,9 @@ function drawRibbon(data, canvasHeight, pointLength) {
         var subline = calculateLineMoveto(leftx, lefty, rightx, righty);
         topSubLines.push(subline);
     }
-    var rightx = data[data.length-1].x + (pointLength / 2);
-    var righty = canvasHeight - data[data.length-1].y - data[data.length-1].h;
-    topSubLines.push("" + rightx + "," + righty);
 
     // Define bottom line: goes from right to left
     var bottomSubLines = [];
-    var rightx = data[data.length-1].x + (pointLength / 2);
-    var righty = canvasHeight - data[data.length-1].y;
-    bottomSubLines.push("" + rightx + "," + righty);
     for (var i=0;i<(data.length-1);i++) {
         var rightx = data[data.length-i-1].x - (pointLength / 2);
         var righty = canvasHeight - data[data.length-i-1].y;
@@ -36,9 +28,6 @@ function drawRibbon(data, canvasHeight, pointLength) {
         var subline = calculateLineMoveto(rightx, righty, leftx, lefty);
         bottomSubLines.push(subline);
     }
-    var leftx = data[0].x - (pointLength / 2);
-    var lefty = canvasHeight - data[0].y;
-    bottomSubLines.push("" + leftx + "," + lefty);
 
     var topLineMoveto = topSubLines.join("L");
     var botLineMoveto = bottomSubLines.join("L");
