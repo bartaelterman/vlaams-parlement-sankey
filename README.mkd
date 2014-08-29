@@ -1,1 +1,14 @@
 # De evolutie van partijen in het Vlaams parlement
+
+## De visualisatie lokaal draaien
+
+- `git clone`
+- `python -m SimpleHTTPServer 8080`
+
+## Unit tests lopen
+
+Browse naar `localhost:8080/unit_tests.html`
+
+## Klad versie bekijken
+
+Browse naar `localhost:8080/scratch/draw.html`
