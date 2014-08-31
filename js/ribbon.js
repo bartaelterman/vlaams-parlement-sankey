@@ -22,7 +22,7 @@ function getYdomain(data) {
     for (x in yValuesByX) {
         ySums.push(yValuesByX[x].reduce(function(a, b) {return a+b}, 0));
     }
-    console.log(ySums);
+    //console.log(ySums);
     return [0, _.max(ySums)];
 }
 
